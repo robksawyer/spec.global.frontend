@@ -77,26 +77,6 @@ Then head to `http://localhost:3001` in your browser.
 The `serve` tasks starts a static file server, which serves the AngularJS application, and a watch task which watches
 all files for changes and lints, builds and injects them into the index.html accordingly.
 
-## Tests
-
-To run tests run:
-
-```bash
-gulp test
-```
-
-**Or** first inject all test files into `karma.conf.js` with:
-
-```bash
-gulp karma-conf
-```
-
-Then you're able to run Karma directly. Example:
-
-```bash
-karma start --single-run
-```
-
 ## Production ready build - a.k.a. dist
 
 To make the app ready for deploy to production run:
@@ -134,29 +114,22 @@ Before you start you'll need to install the testing tools globally in order to r
 
 `npm install -g phantomjs`
 
-`webdriver-manager update --standalone` 
+`webdriver-manager update --standalone`
 
 
-The grunt plugin being used assumes you have PhantomJS installed globally. Since we're using it via other grunt configs, you need to install it as an optional dependency:
-```
-# From your project's root directory
-cd node_modules/grunt-phantom/
-npm install --optional
-```
+To run tests run:
 
-Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
-
-```
-grunt.loadNpmTasks('grunt-phantom');
+```bash
+gulp test
 ```
 
-We use unit tests to ensure that the JavaScript code in our application is operating correctly. Unit tests focus on testing small isolated parts of the application. The unit tests are kept in the `/assets/test/unit` directory.
+**Or** first inject all test files into `karma.conf.js` with:
 
-The Spec project is configured to use [Karma](https://github.com/karma-runner/karma) to run the unit tests for the application. Start Karma by running:
+```bash
+gulp karma-conf
+```
 
-```
-grunt test:karma
-```
+The Spec project is configured to use [Karma](https://github.com/karma-runner/karma) to run the unit tests for the application. 
 
 This will start the Karma unit test runner. Karma will read the configuration file at `test/karma.conf.js`. This configuration file tells Karma to:
  - open up a Chrome browser and connect it to Karma
@@ -166,7 +139,16 @@ This will start the Karma unit test runner. Karma will read the configuration fi
 
 It is good to leave this running all the time, in the background, as it will give you immediate feedback about whether your changes pass the unit tests while you are working on the code.
 
+```bash
+karma start --single-run
+```
+
+We use unit tests to ensure that the JavaScript code in our application is operating correctly. Unit tests focus on testing small isolated parts of the application. The unit tests are kept in the `/src/app/test/unit` directory.
+
+
 ### Running End to End Tests
+
+TODO: This is not currently working.
 
 We use End to End (E2E) tests to ensure that the application as a whole operates as expected. End to End tests are designed to test the whole client side application, in particular that the views are displaying and behaving correctly. It does this by simulating real user interaction with the real application running in the browser.
 
@@ -180,19 +162,13 @@ webdriver-manager update --standalone
 
 Since Protractor works by interacting with a running application, we need to start our web server:
 ```
-sails lift
+gulp serve
 ```
 
 Then in a separate terminal/command line window, we can run the Protractor test scripts against the application by running:
 
 ```
 webdriver-manager start
-```
-
-To run it headless via PhantomJS use the following command:
-
-```
-grunt test:protractor
 ```
 
 This will start up a Selenium Server and will output a bunch of info logs. Your Protractor test will send requests to this server to control a local browser. You should leave this server running as you're developing. You can see information about the status of the server at `http://localhost:4444/wd/hub`.
