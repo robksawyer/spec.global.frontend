@@ -1,0 +1,192 @@
+<div class="container">
+	<form action="/standardplacement/create" method="POST" role="form">
+		<div class="row-fluid">
+			<h2 class="form-signin-heading">Create a <em>Standard Media</em> placement</h2>
+			<% if (res.locals && res.locals.errors) { %>
+				<% var errors = res.locals.errors; %>
+				<div class="alert alert-danger">
+					<button type="button" class="close" aria-hidden="true" data-dismiss="alert">&times;</button>
+					<ul>
+					<% Object.keys(errors).forEach(function(error) { %>
+						<% Object.keys(errors[error]).forEach(function(error_message) { %>
+							<% sails.log(errors[error][error_message]); %>
+							<% Object.keys(errors[error][error_message]).forEach(function(error_message_res) { %>
+								<li><%- errors[error][error_message][error_message_res] %></li>
+							<% }); %>
+						<% }); %>
+					<% }); %>
+					</ul>
+				</div>
+
+				<% var t_results = req.flash('temp_results'); %>
+				<% if(t_results[0]){ %>
+					<% 
+					t_results = t_results[0];
+					sails.log.info("Results Restored");
+					%>
+				<% } %>
+			<% } %>
+		</div>
+	    <div class="row-fluid">
+			<div class="form-group"> 
+				<label for="pName">Placement Name</label>
+				<input type="text" name="name" id="pName" class="form-control" title="Name" placeholder="12/27 Homepage 300x250 Banner" />   
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<blockquote>
+				<p class="lead">General Specifications</p>
+			</blockquote>
+		</div>
+		<div class="row-fluid">
+			<div class="form-group row">
+				<div class="col-xs-4">
+					<label for="pWidth">Width</label>
+					<div class="input-group">
+						<input type="integer" name="width" id="pWidth" class="form-control" title="Width (in PX)" placeholder="300" />   
+						<div class="input-group-addon">px</div>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<label for="pHeight">Height</label>
+					<div class="input-group">
+						<input type="integer" name="height" id="pHeight" class="form-control" title="Height (in PX)" placeholder="250" />  
+						<div class="input-group-addon">px</div>
+					</div> 
+				</div>
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<div class="form-group">
+				<label for="pFiletype">Filetype</label>
+				<div class="input-group col-xs-4">
+					<input type="text" name="file_type" id="pFiletype" class="form-control" title="File Type (ex: FLA)" placeholder="FLA" />   
+				</div>
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<blockquote>
+				<p class="lead">Animation Details</p>
+			</blockquote>
+		</div>
+		<div class="row-fluid">
+			<div class="form-group">
+				<label for="pMaxAnimationFramerate">Max Animation Framerate</label>
+				<div class="input-group col-xs-3">
+					<input type="text" name="max_animation_framerate" id="pMaxAnimationFramerate" class="form-control" title="Maximum Framerate (in FPS)" value="0" placeholder="24" />
+					<div class="input-group-addon">fps</div>   
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="pMaxAnimationLength">Max Animation Length</label>
+				<div class="input-group col-xs-3">
+					<input type="text" name="max_animation_length" id="pMaxAnimationLength" class="form-control" title="Maximum Animation Length (in seconds)" value="0" placeholder="15" />
+					<div class="input-group-addon">seconds</div>   
+				</div>
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<blockquote>
+				<p class="lead">Audio Details</p>
+			</blockquote>
+		</div>
+		<div class="row-fluid">
+			<div class="form-group">
+				<label for="pAudioInitiation">Audio Initiation</label>
+				<div class="input-group col-xs-6">
+					<input type="text" name="audio_initiation" id="pAudioInitiation" class="form-control" title="Audio Initiation" placeholder="User Initiated" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="pMaxAudioLength">Audio Length</label>
+				<div class="input-group col-xs-3">
+					<input type="text" name="max_audio_length" id="pMaxAudioLength" class="form-control" title="Max Audio Length (in secs)" value="0" placeholder="" />
+					<div class="input-group-addon">seconds</div>   
+				</div>
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<blockquote>
+				<p class="lead">Other Details</p>
+			</blockquote>
+		</div>
+		<div class="row-fluid">
+			
+			<div class="form-group">
+				<label for="pHotspot">Hotspot Specifications</label>
+				<textarea name="hotspot_specification" id="pHotspot" class="form-control" title="Hotspot Specifications" rows="3"></textarea>
+			</div>
+
+			<div class="form-group">
+				<label for="pZIndexRange">Z-index Range</label>
+				<div class="input-group col-xs-4">
+					<input type="text" name="z_index_range" id="pZIndexRange" class="form-control" title="Z-Index Range" placeholder="100-200" />   
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="pLocationOnPage">General Location on Page</label>
+				<div class="input-group col-xs-6">
+					<input type="text" name="location_on_page" id="pLocationOnPage" class="form-control" title="General Location on Page" placeholder="Left side below header" />   
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="pPublishers">Publisher</label>				
+				<select name="publishers" id="pPublishers" class="form-control" title="Publisher">  
+					<!-- TODO: Generate this list dynamically -->
+					<option>CBS</option>
+					<option>Fox Sports</option>
+					<option>College Humor</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="pLabelingRequirements">Labeling Requirements</label>
+				<textarea name="labeling_requirements" id="pLabelingRequirements" class="form-control" title="Labeling Requirements" rows="3"></textarea>
+			</div>
+
+			<div class="form-group">
+				<label for="pSubmissionLeadTime">Submission Lead Time</label>
+				<div class="input-group col-xs-3">
+					<input type="text" name="submission_lead_time" id="pSubmissionLeadTime" class="form-control" title="Submission Lead Time" placeholder="2 weeks" />   
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="pImplementaionNOtes">Implementation Notes</label>
+				<textarea name="implmentation_notes" id="pImplementaionNOtes" class="form-control" title="Implementation Notes" rows="3"></textarea>
+			</div>
+
+			<div class="form-group">
+				<label for="pBPDocURL">Best Practice Document URL</label>
+				<div class="input-group col-xs-6">
+					<input type="text" name="best_practice_document_url" id="pBPDocURL" class="form-control" title="Best Practice Document URL" placeholder="" />   
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="pMoreInfoDocURL">More Information URL</label>
+				<div class="input-group col-xs-6">
+					<input type="text" name="more_information_url" id="pMoreInfoDocURL" class="form-control" title="More Information URL" placeholder="" />   
+				</div>
+			</div>
+
+		</div>
+
+		<br/>
+		<div class="row-fluid">
+			<div class="form-group">
+				<button type="submit" class="btn btn-lg btn-primary" type="submit">Create Placement</button>
+				<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+			</div>
+		</div>
+	</form>
+</div>
