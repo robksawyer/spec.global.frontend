@@ -36,6 +36,15 @@ The Spec frontend application uses following 3rd party libraries to make all thi
 
 Note that this list may change at any time and may not be complete.
 
+# Run the app
+
+If you just want to see the app in action run the following:
+
+1. `npm install; bower install;`
+2. `gulp serve`
+3. Navigate to `http://localhost:3001` in your browser.
+4. Start up [spec.global.backend](https://github.com/robksawyer/spec.global.backend).
+
 # Technology Stack
 
 ## Frontend
