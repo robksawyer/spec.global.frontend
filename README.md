@@ -9,17 +9,11 @@ This is an AngularJS application that uses a separate backend that can be found 
 * Generic error handler which is attached to $http and $sailsSocket
 * Message service to show specified messages to users
 
-## Dependencies
+## Used components and development tools
 
-* AngularJS (https://angularjs.org/)
-* BootstapJS (http://getbootstrap.com)
-* Karma (https://github.com/karma-runner/karma) - Unit test runner
-* Protractor (http://angular.github.io/protractor) - End to end (E2E) test runner
-* PhantomJS (http://phantomjs.org) - Headless WebKit scriptable with a JavaScript API
+The Spec frontend application uses following 3rd party libraries to make all this magic happen. To see all of the components used, check the `package.json` file in the root directory.
 
-## Used components
-The Spec frontend application uses following 3rd party libraries to make all this magic happen.
-
+### Components 
 * slush-angular (https://github.com/slushjs/slush-angular)
 * AngularJS (https://github.com/angular/angular.js)
 * AngularUI Router (https://github.com/angular-ui/ui-router)
@@ -34,9 +28,17 @@ The Spec frontend application uses following 3rd party libraries to make all thi
 * noty - A jQuery Notification Plugin (https://github.com/needim/noty)
 * Sails JavaScript Client SDK (https://github.com/balderdashy/sails.io.js)
 
+### Development Tools
+* GulpJS (http://www.gulpjs.com)
+* Karma - Unit test runner (https://github.com/karma-runner/karma)
+* Protractor - End to end (E2E) test runner (http://angular.github.io/protractor)
+* PhantomJS - Headless WebKit scriptable with a JavaScript API (http://phantomjs.org)
+
 Note that this list may change at any time and may not be complete.
 
-## Technology Stack (frontend)
+# Technology Stack
+
+## Frontend
 
 The interface is presented via the magic of AngularJS and Bootstrap. Most of the frontend dependencies were installed with Bower via [this method](http://stackoverflow.com/a/22456574/67524). The project is also preconfigured with a number of npm helper scripts to make it easy to run the common tasks that you will need while developing:
 
@@ -47,7 +49,71 @@ The interface is presented via the magic of AngularJS and Bootstrap. Most of the
 
 Configuration variables have been created throughout the app via [this method](http://stackoverflow.com/a/18274034/67524).
 
-### Running Unit Tests
+## Development
+
+Before you start, you need to understand that the app is divided into two separate repositories. One handling frontend code and the other pertaining to the backend service. These can be found at:
+
+* Frontend (https://github.com/robksawyer/spec.global.frontend)
+* Backend (https://github.com/robksawyer/spec.global.backend)
+
+
+To start developing in the project run:
+
+```bash
+gulp serve
+```
+
+Then head to `http://localhost:3001` in your browser.
+
+The `serve` tasks starts a static file server, which serves the AngularJS application, and a watch task which watches
+all files for changes and lints, builds and injects them into the index.html accordingly.
+
+## Tests
+
+To run tests run:
+
+```bash
+gulp test
+```
+
+**Or** first inject all test files into `karma.conf.js` with:
+
+```bash
+gulp karma-conf
+```
+
+Then you're able to run Karma directly. Example:
+
+```bash
+karma start --single-run
+```
+
+## Production ready build - a.k.a. dist
+
+To make the app ready for deploy to production run:
+
+```bash
+gulp dist
+```
+
+Now there's a `./dist` folder with all scripts and stylesheets concatenated and minified, also third party libraries
+installed with bower will be concatenated and minified into `vendors.min.js` and `vendors.min.css` respectively.
+
+To run your deployment code run:
+
+```bash
+gulp production
+```
+
+Then head to `http://localhost:3000` in your browser.
+
+## Backend
+
+Information about the apps frontend can be found in [spec.global.backend/README.md](https://github.com/robksawyer/spec.global.backend/blob/master/README.md).
+
+# Testing 
+
+## Running Unit Tests
 
 Before you start you'll need to install the testing tools globally in order to run the commands mentioned later.
 
@@ -131,54 +197,26 @@ Protractor will read the configuration file at `assets/test/protractor-conf.js`.
  It is good to run the end to end tests whenever you make changes to the HTML views or want to check that the application as a whole is executing correctly. It is very common to run End to End tests before pushing a new commit of changes to a remote repository.
 
 
-## Development
+ # The App
+The current app is running at <http://spec-global-frontend.herokuapp.com>.
 
-To start developing in the project run:
+# Staging 
 
-```bash
-gulp serve
-```
+Coming soon...
+~~The current staging site is located at <http://spec-global-frontend-stage.herokuapp.com>.~~
 
-Then head to `http://localhost:3001` in your browser.
+# Deployment 
 
-The `serve` tasks starts a static file server, which serves the AngularJS application, and a watch task which watches
-all files for changes and lints, builds and injects them into the index.html accordingly.
+## Environment Variables
 
-## Tests
+These can be tricky if you've never worked with them. Basically, our strategy is similar to what's mentioned in the post <http://stackoverflow.com/questions/21291111/sails-js-accessing-local-js-environment-settings-in-controllers>. The idea here is to add environment variables needed locally by Sails to the `config/local.js` file. All of the others are added using `heroku config:set MYVAR=''` and then used in the production code via `process.env.MYVAR`.
 
-To run tests run:
+## General Info
 
-```bash
-gulp test
-```
+Coming soon...
 
-**Or** first inject all test files into `karma.conf.js` with:
+`git push heroku master`
 
-```bash
-gulp karma-conf
-```
+## Logging 
 
-Then you're able to run Karma directly. Example:
-
-```bash
-karma start --single-run
-```
-
-## Production ready build - a.k.a. dist
-
-To make the app ready for deploy to production run:
-
-```bash
-gulp dist
-```
-
-Now there's a `./dist` folder with all scripts and stylesheets concatenated and minified, also third party libraries
-installed with bower will be concatenated and minified into `vendors.min.js` and `vendors.min.css` respectively.
-
-To run your deployment code run:
-
-```bash
-gulp production
-```
-
-Then head to `http://localhost:3000` in your browser.
+We are currently using [Papertrail](https://papertrailapp.com/) for all of our logging purposes.
