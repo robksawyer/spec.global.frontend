@@ -58,6 +58,12 @@ If you just want to see the app in action run the following:
 3. Navigate to `http://localhost:3001` in your browser.
 4. Start up [spec.global.backend](https://github.com/robksawyer/spec.global.backend).
 
+Use following credentials for login:
+<pre>
+username: demo
+password: demodemodemo
+</pre>
+
 # Technology Stack
 
 ## Frontend
