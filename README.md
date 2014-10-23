@@ -9,6 +9,19 @@ This is an AngularJS application that uses a separate backend that can be found 
 * Generic error handler which is attached to $http and $sailsSocket
 * Message service to show specified messages to users
 
+
+## Installation
+First of all you have to install `npm` to your box. Also you need `node.js` installed to your box. Or, if you're serving the app via Heroku, just make sure that you have it installed locally. See [spec.global.backend/ONBOARDING.md](https://github.com/robksawyer/spec.global.backend/blob/master/ONBOARDING.md) for more.
+<pre>
+npm install bower -g
+npm install slush -g
+npm install sails -g
+npm install karma-cli -g
+npm install karma -g
+npm install phantomjs -g
+npm install protractor -g
+</pre>
+
 ## Used components and development tools
 
 The Spec frontend application uses following 3rd party libraries to make all this magic happen. To see all of the components used, check the `package.json` file in the root directory.
@@ -104,18 +117,15 @@ Information about the apps frontend can be found in [spec.global.backend/README.
 
 ## Running Unit Tests
 
-Before you start you'll need to install the testing tools globally in order to run the commands mentioned later.
+Before you start you'll need to install the testing tools globally (if you didn't do this earlier) in order to run the commands mentioned later.
 
-`npm install -g karma-cli`
-
-`npm install -g karma`
-
-`npm install -g protractor`
-
-`npm install -g phantomjs`
-
-`webdriver-manager update --standalone`
-
+<pre>
+npm install karma-cli -g
+npm install karma -g
+npm install protractor -g
+npm install phantomjs -g
+webdriver-manager update --standalone
+</pre>
 
 To run tests run:
 
