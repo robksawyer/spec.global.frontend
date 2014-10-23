@@ -1,5 +1,5 @@
 /**
- * Interceptor fot $http and $sailSocket request to handle possible errors and show
+ * Interceptor for $http and $sailSocket request to handle possible errors and show
  * that error to user automatic. Message is shown by application 'Message' service
  * which uses noty library.
  *

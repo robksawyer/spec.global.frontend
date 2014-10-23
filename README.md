@@ -1,4 +1,4 @@
-![SpecGlobal_Logo.png](http://s23.postimg.org/4f0itpwtn/spec_global.png)
+![SpecGlobal_Logo.png](http://s27.postimg.org/3p5aaizkj/spec_global_blk_497x46.png)
 
 > Spec (http://spec.global) is filling a niche in the [display advertising technology landscape](http://prezi.com/katuvp2rkyk_/the-display-advertising-technology-landscape/) by providing media planning and creative agencies a platform that connects them to site and publisher inventory specifications.
 
