@@ -78,8 +78,13 @@ Before you start, you need to understand that the app is divided into two separa
 * Frontend (https://github.com/robksawyer/spec.global.frontend)
 * Backend (https://github.com/robksawyer/spec.global.backend)
 
+### Starting the backend
 
-To start developing in the project run:
+In order to get the backend running, you'll need to refer to [spec.global.backend/README.md](https://github.com/robksawyer/spec.global.backend/blob/master/README.md).
+
+### Starting the frontend
+
+In order to get the frontend running, just run the following command:
 
 ```bash
 gulp serve
