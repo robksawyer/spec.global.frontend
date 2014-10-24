@@ -203,7 +203,7 @@ Protractor will read the configuration file at `assets/test/protractor-conf.js`.
  It is good to run the end to end tests whenever you make changes to the HTML views or want to check that the application as a whole is executing correctly. It is very common to run End to End tests before pushing a new commit of changes to a remote repository.
 
 
- # The App
+# The App
 The current app is running at <http://spec-global-frontend.herokuapp.com>.
 
 # Staging 

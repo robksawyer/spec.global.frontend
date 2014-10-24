@@ -26,7 +26,7 @@
         'frontend.interceptors',
         'frontend.services',
         'frontend.models',
-        'frontend.example'
+        'frontend.spec'
     ]);
 
     // Initialize used frontend specified modules
@@ -36,14 +36,20 @@
     angular.module('frontend.filters', []);
     angular.module('frontend.interceptors', []);
     angular.module('frontend.services', []);
-    angular.module('frontend.example', [
+    
+    angular.module('frontend.spec', [
+        'frontend.example.login',
+        'frontend.example.navigation',
+    ]);
+
+    /*angular.module('frontend.example', [
         'frontend.example.author',
         'frontend.example.book',
         'frontend.example.chat',
         'frontend.example.login',
         'frontend.example.navigation',
         'frontend.example.messages'
-    ]);
+    ]);*/
 
     /**
      * Configuration for frontend application, this contains following main sections:

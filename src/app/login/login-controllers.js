@@ -28,7 +28,7 @@
                 ) {
                     // Already authenticated so redirect back to books list
                     if (Auth.isAuthenticated()) {
-                        $state.go('example.books');
+                       // $state.go('example.books');
                     }
 
                     // Scope function to perform actual login request to server
@@ -37,7 +37,7 @@
                             .login($scope.credentials)
                             .then(
                                 function successCallback() {
-                                    $state.go('example.books');
+                                   // $state.go('example.books');
                                 },
                                 function errorCallback() {
                                     _reset();
