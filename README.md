@@ -9,6 +9,9 @@ This is an AngularJS application that uses a separate backend that can be found 
 * Generic error handler which is attached to $http and $sailsSocket
 * Message service to show specified messages to users
 
+## Before you get started
+
+As mentioned above, this project does use Angular JS. If you're unfamiliar with Angular, you should really read throught the [AngularJS:Conceptual Overview](https://docs.angularjs.org/guide/concepts) documentation before proceeding.
 
 ## Installation
 First of all you have to install `npm` to your box. Also you need `node.js` installed to your box. Or, if you're serving the app via Heroku, just make sure that you have it installed locally. See [spec.global.backend/ONBOARDING.md](https://github.com/robksawyer/spec.global.backend/blob/master/ONBOARDING.md) for more.
