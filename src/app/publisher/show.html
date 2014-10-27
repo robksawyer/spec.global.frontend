@@ -1,0 +1,36 @@
+<page-navigation
+    data-title='Information about "Publisher" GUI'
+    data-directory='publisher'
+    data-template='publisher'
+    data-active-tab='publishers'
+></page-navigation>
+
+<div data-ng-show="!publisher">
+    <h3>Requested publisher not found</h3>
+</div>
+
+<div data-ng-show="publisher">
+    <div class="row">
+        <div class="col-md-8">
+            <h3>{{publisher.name}}</h3>
+
+            <p data-ng-bind-html="publisher.description | newLines"></p>
+        </div>
+
+        <div class="col-md-4">
+            <h4 class="text-muted">Information</h4>
+            <table class="table">
+                <!-- <tr>
+                    <th>Author</th>
+                    <td>
+                        <a data-ui-sref="example.author({id: publisher.author.id})">{{publisher.author.name}}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Released</th>
+                    <td>{{publisher.releaseDate | amDateFormat: 'YYYY'}}</td>
+                </tr> -->
+            </table>
+        </div>
+    </div>
+</div>

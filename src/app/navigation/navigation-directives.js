@@ -42,8 +42,12 @@
 
                         $scope.navigationItems = [
                             {
-                                url: 'standard',
+                                url: 'standardPlacement',
                                 title: 'Standard Media Units'
+                            },
+                            {
+                                url: 'publisher',
+                                title: 'Publishers'
                             }
                         ];
                     }

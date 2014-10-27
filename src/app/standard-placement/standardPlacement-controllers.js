@@ -15,7 +15,7 @@
                 '$scope',
                 '_standardPlacement',
                 function($scope,
-                         _standard
+                         _standardPlacement
                 ) {
                     $scope.standardPlacement = _standardPlacement;
                 }

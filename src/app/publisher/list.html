@@ -1,11 +1,11 @@
 <page-navigation
-    data-title='Information about "Books" GUI'
-    data-directory='book'
+    data-title='Information about "Publishers" GUI'
+    data-directory='publisher'
     data-template='list'
 ></page-navigation>
 
 <h3>
-    Books ({{itemCount}})
+    Publishers ({{itemCount}})
 
     <pagination class="pagination-sm pull-right"
         data-total-items="itemCount"
@@ -21,16 +21,16 @@
     <thead class="noSelect">
         <tr>
             <th class="text-nowrap {{item.class}}"
-                data-ng-repeat="item in titleItems"
+                data-ng-repeat="item in nameItems"
             >
                 <a
                     data-ng-show="item.column"
                     data-ng-click="changeSort(item)"
-                    data-ng-bind-html="item.title"
+                    data-ng-bind-html="item.name"
                 ></a>
                 <span
                     data-ng-show="!item.column"
-                    data-ng-bind-html="item.title"
+                    data-ng-bind-html="item.name"
                 ></span>
 
                 <i class="fa"
@@ -41,14 +41,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr data-ng-repeat="book in items">
+        <tr data-ng-repeat="publisher in items">
             <td class="col-md-9">
-                <a data-ui-sref="example.book({id: book.id})">{{book.title}}</a>
+                <a data-ui-sref="publisher({id: publisher.id})">{{publisher.name}}</a>
             </td>
-            <td class="col-md-2">
-                <a data-ui-sref="example.author({id: book.author.id})">{{book.author.name}}</a>
-            </td>
-            <td class="col-md-1 text-right">{{book.releaseDate | amDateFormat: 'YYYY'}}</td>
         </tr>
     </tbody>
 </table>

@@ -133,70 +133,58 @@
                             }
                         })
 
-                        // Books list
-                        .state('example.books', {
+                        // Standard media placement list
+                        .state('standardPlacements', {
                             url: '/books',
-                            templateUrl: '/frontend/book/list.html',
-                            controller: 'BookListController'
+                            templateUrl: '/frontend/standard-placement/list.html',
+                            controller: 'StandardPlacementListController'
                         })
 
-                        // Single book
-                        .state('example.book', {
-                            url: '/book/:id',
-                            templateUrl: '/frontend/book/book.html',
-                            controller: 'BookController',
+                        // Single standard media placement
+                        .state('standardPlacement', {
+                            url: '/standard-placement/:id',
+                            templateUrl: '/frontend/standard-placement/show.html',
+                            controller: 'StandardPlacementController',
                             resolve: {
-                                '_book': [
+                                '_standardPlacement': [
                                     '$stateParams',
-                                    'BookModel',
+                                    'StandardPlacementModel',
                                     function($stateParams,
-                                             BookModel
+                                             StandardPlacementModel
                                     ) {
-                                        return BookModel
-                                            .fetch($stateParams.id, {populate: 'author'});
+                                        return StandardPlacementModel
+                                            .fetch($stateParams.id, {populate: 'publisher'});
                                     }
                                 ]
                             }
                         })
 
                         // Authors list
-                        .state('example.authors', {
-                            url: '/authors',
-                            templateUrl: '/frontend/author/list.html',
-                            controller: 'AuthorListController'
+                        .state('publishers', {
+                            url: '/publishers',
+                            templateUrl: '/frontend/publisher/list.html',
+                            controller: 'PublisherListController'
                         })
 
                         // Single author
-                        .state('example.author', {
-                            url: '/author/:id',
-                            templateUrl: '/frontend/author/author.html',
-                            controller: 'AuthorController',
+                        .state('publisher', {
+                            url: '/publisher/:id',
+                            templateUrl: '/frontend/publisher/show.html',
+                            controller: 'PublisherController',
                             resolve: {
-                                '_author': [
+                                '_publisher': [
                                     '$stateParams',
-                                    'AuthorModel',
+                                    'PublisherModel',
                                     function($stateParams,
-                                             AuthorModel
+                                             PublisherModel
                                     ) {
-                                        return AuthorModel
-                                            .fetch($stateParams.id, {populate: 'books'});
+                                        return PublisherModel
+                                            .fetch($stateParams.id, {
+                                                populate: 'standardPlacements'
+                                            });
                                     }
                                 ]
                             }
-                        })
-
-                        // Messages
-                        .state('example.messages', {
-                            url: '/messages',
-                            templateUrl: '/frontend/messages/messages.html',
-                            controller: 'MessagesController'
-                        })
-
-                        // Chat
-                        .state('example.chat', {
-                            url: '/chat',
-                            templateUrl: '/frontend/chat/chat.html',
-                            controller: 'ChatController'
                         })
                     ;
 

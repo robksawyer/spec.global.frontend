@@ -210,7 +210,7 @@
                      * @type    {{}}
                      */
                     var data = {
-                        'standard.list': {
+                        'standardPlacement.list': {
                             'Backend': [
                                 {
                                     url: repository + 'backend/api/models/StandardPlacement.js',
@@ -250,6 +250,47 @@
                                     info: types.generic.template
                                 }
                             ]
+                        },
+                        'publisher.list': {
+                            'Backend': [
+                                {
+                                    url: repository + 'backend/api/models/Publisher.js',
+                                    title: 'Publisher.js',
+                                    info: types.generic.model
+                                },
+                                {
+                                    url: repository + 'backend/api/controllers/PublisherController.js',
+                                    title: 'PublisherController.js',
+                                    info: types.generic.controller
+                                },
+                                {
+                                    url: repository + 'backend/test/fixtures/Publisher.json',
+                                    title: 'Publisher.json',
+                                    info: types.generic.data
+                                }
+                            ],
+                            'Frontend': [
+                                {
+                                    url: repository + 'frontend/src/app/publisher/publisher.js',
+                                    title: 'publisher.js',
+                                    info: types.frontend.module
+                                },
+                                {
+                                    url: repository + 'frontend/src/app/publisher/publisher-controllers.js',
+                                    title: 'publisher-controllers.js',
+                                    info: types.generic.controller
+                                },
+                                {
+                                    url: repository + 'frontend/src/app/publisher/publisher-models.js',
+                                    title: 'publisher-models.js',
+                                    info: types.generic.model
+                                },
+                                {
+                                    url: repository + 'frontend/src/app/publisher/index.html',
+                                    title: 'index.html',
+                                    info: types.generic.template
+                                }
+                            ]
                         }
                     };
 
@@ -275,6 +316,7 @@
 
                             switch (directory + '.' + template) {
                                 case 'standardPlacement.list':
+                                case 'publisher.list':
                                 case 'chat.chat':
                                     files = _.merge(files, generic.backend, generic.frontend);
                                     break;
