@@ -38,8 +38,9 @@
     angular.module('frontend.services', []);
     
     angular.module('frontend.spec', [
-        'frontend.example.login',
-        'frontend.example.navigation',
+        'frontend.login',
+        'frontend.navigation',
+        'frontend.standardPlacement'
     ]);
 
     /*angular.module('frontend.example', [

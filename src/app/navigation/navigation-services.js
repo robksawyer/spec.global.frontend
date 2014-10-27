@@ -1,5 +1,5 @@
 /**
- * This file contains all necessary Angular service definitions for 'frontend.example.navigation' module.
+ * This file contains all necessary Angular service definitions for 'frontend.navigation' module.
  *
  * Note that this file should only contain services and nothing else.
  */
@@ -10,7 +10,7 @@
      * Generic info modal service, that contains necessary functionality to configure and open specified info modal.
      * These info modals are just for generic documentation for each GUI that is implemented to application.
      */
-    angular.module('frontend.example.navigation')
+    angular.module('frontend.navigation')
         .factory('NavigationInfoModalService',
             [
                 '$modal',
@@ -72,7 +72,7 @@
      * These files are shown in example page info modal, so that users can easily see what current example page is
      * using to do things.
      */
-    angular.module('frontend.example.navigation')
+    angular.module('frontend.navigation')
         .factory('NavigationInfoModalFiles',
             [
                 '_',
@@ -210,167 +210,44 @@
                      * @type    {{}}
                      */
                     var data = {
-                        'book.list': {
+                        'standard.list': {
                             'Backend': [
                                 {
-                                    url: repository + 'backend/api/models/Book.js',
-                                    title: 'Book.js',
+                                    url: repository + 'backend/api/models/StandardPlacement.js',
+                                    title: 'StandardPlacement.js',
                                     info: types.generic.model
                                 },
                                 {
-                                    url: repository + 'backend/api/controllers/BookController.js',
-                                    title: 'BookController.js',
+                                    url: repository + 'backend/api/controllers/StandardPlacementController.js',
+                                    title: 'StandardPlacementController.js',
                                     info: types.generic.controller
                                 },
                                 {
-                                    url: repository + 'backend/test/fixtures/Book.json',
-                                    title: 'Book.json',
+                                    url: repository + 'backend/test/fixtures/StandardPlacement.json',
+                                    title: 'StandardPlacement.json',
                                     info: types.generic.data
                                 }
                             ],
                             'Frontend': [
                                 {
-                                    url: repository + 'frontend/src/app/book/book.js',
-                                    title: 'book.js',
+                                    url: repository + 'frontend/src/app/standard-placement/standardPlacement.js',
+                                    title: 'standardPlacement.js',
                                     info: types.frontend.module
                                 },
                                 {
-                                    url: repository + 'frontend/src/app/book/book-controllers.js',
-                                    title: 'book-controllers.js',
+                                    url: repository + 'frontend/src/app/standard-placement/standardPlacement-controllers.js',
+                                    title: 'standardPlacement-controllers.js',
                                     info: types.generic.controller
                                 },
                                 {
-                                    url: repository + 'frontend/src/app/book/book-models.js',
-                                    title: 'book-models.js',
+                                    url: repository + 'frontend/src/app/standard-placement/standardPlacement-models.js',
+                                    title: 'standardPlacement-models.js',
                                     info: types.generic.model
                                 },
                                 {
-                                    url: repository + 'frontend/src/app/book/list.html',
-                                    title: 'list.html',
+                                    url: repository + 'frontend/src/app/standard-placement/index.html',
+                                    title: 'index.html',
                                     info: types.generic.template
-                                }
-                            ]
-                        },
-                        'author.list': {
-                            'Backend': [
-                                {
-                                    url: repository + 'backend/api/models/Author.js',
-                                    title: 'Author.js',
-                                    info: types.generic.model
-                                },
-                                {
-                                    url: repository + 'backend/api/controllers/AuthorController.js',
-                                    title: 'AuthorController.js',
-                                    info: types.generic.controller
-                                },
-                                {
-                                    url: repository + 'backend/test/fixtures/Author.json',
-                                    title: 'Author.json',
-                                    info: types.generic.data
-                                }
-                            ],
-                            'Frontend': [
-                                {
-                                    url: repository + 'frontend/src/app/author/author.js',
-                                    title: 'author.js',
-                                    info: types.frontend.module
-                                },
-                                {
-                                    url: repository + 'frontend/src/app/author/author-controllers.js',
-                                    title: 'author-controllers.js',
-                                    info: types.generic.controller
-                                },
-                                {
-                                    url: repository + 'frontend/src/app/author/author-models.js',
-                                    title: 'author-models.js',
-                                    info: types.generic.model
-                                },
-                                {
-                                    url: repository + 'frontend/src/app/author/list.html',
-                                    title: 'list.html',
-                                    info: types.generic.template
-                                }
-                            ]
-                        },
-                        'messages.messages': {
-                            'Frontend': [
-                                {
-                                    url: repository + 'frontend/src/app/messages/messages.js',
-                                    title: 'messages.js',
-                                    info: types.frontend.module
-                                },
-                                {
-                                    url: repository + 'frontend/src/app/messages/messages-controllers.js',
-                                    title: 'messages-controllers.js',
-                                    info: types.generic.controller
-                                },
-                                {
-                                    url: repository + 'frontend/src/app/messages/messages.html',
-                                    title: 'messages.html',
-                                    info: types.generic.template
-                                }
-                            ],
-                            'Frontend <span class="text-muted">generic</span>': [
-                                {
-                                    url: repository + 'frontend/src/app/components/Interceptors/ErrorInterceptor.js',
-                                    title: 'ErrorInterceptor.js',
-                                    info: types.frontend.errorInterceptor
-                                },
-                                {
-                                    url: repository + 'frontend/src/app/components/Services/MessageService.js',
-                                    title: 'MessageService.js',
-                                    info: 'Service to show messages to users via <em>toastr</em> service.'
-                                },
-                                {
-                                    url: repository + 'frontend/src/app/components/Services/HttpStatus.js',
-                                    title: 'HttpStatus.js',
-                                    info: 'Generic HTTP status service that contains helper methods for HTTP status code handling.'
-                                }
-                            ]
-                        },
-                        'chat.chat': {
-                            'Backend': [
-                                {
-                                    url: repository + 'backend/api/models/Message.js',
-                                    title: 'Message.js',
-                                    info: types.generic.model
-                                },
-                                {
-                                    url: repository + 'backend/api/controllers/MessageController.js',
-                                    title: 'MessageController.js',
-                                    info: types.generic.controller
-                                }
-                            ],
-                            'Frontend': [
-                                {
-                                    url: repository + 'frontend/src/app/chat/chat.js',
-                                    title: 'chat.js',
-                                    info: types.frontend.module
-                                },
-                                {
-                                    url: repository + 'frontend/src/app/chat/chat-controllers.js',
-                                    title: 'chat-controllers.js',
-                                    info: types.generic.controller
-                                },
-                                {
-                                    url: repository + 'frontend/src/app/chat/chat-models.js',
-                                    title: 'chat-models.js',
-                                    info: types.generic.model
-                                },
-                                {
-                                    url: repository + 'frontend/src/app/chat/chat-directives.js',
-                                    title: 'chat-directives.js',
-                                    info: types.frontend.directive
-                                },
-                                {
-                                    url: repository + 'frontend/src/app/chat/chat.html',
-                                    title: 'chat.html',
-                                    info: types.generic.template
-                                },
-                                {
-                                    url: repository + 'frontend/src/app/components/Directives/KeyPress.js',
-                                    title: 'KeyPress.js',
-                                    info: 'Key press directive.'
                                 }
                             ]
                         }
@@ -397,8 +274,7 @@
                             var files = data[directory + '.' + template];
 
                             switch (directory + '.' + template) {
-                                case 'book.list':
-                                case 'author.list':
+                                case 'standardPlacement.list':
                                 case 'chat.chat':
                                     files = _.merge(files, generic.backend, generic.frontend);
                                     break;

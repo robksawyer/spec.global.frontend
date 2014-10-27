@@ -1,5 +1,5 @@
 /**
- * This file contains all necessary Angular controller definitions for 'frontend.example.navigation' module.
+ * This file contains all necessary Angular controller definitions for 'frontend.navigation' module.
  *
  * Note that this file should only contain controllers and nothing else.
  */
@@ -10,7 +10,7 @@
      * Controller for navigation info modal. This is used to show GUI specified detailed information about how those
      * are done (links to sources + generic information / description).
      */
-    angular.module('frontend.example.navigation')
+    angular.module('frontend.navigation')
         .controller('NavigationModalController',
             [
                 '$scope', '$modalInstance',

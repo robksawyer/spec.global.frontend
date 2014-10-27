@@ -1,5 +1,5 @@
 /**
- * This file contains all necessary Angular controller definitions for 'frontend.example.login' module.
+ * This file contains all necessary Angular controller definitions for 'frontend.login' module.
  *
  * Note that this file should only contain controllers and nothing else.
  */
@@ -17,7 +17,7 @@
      *  1) different authentication providers
      *  2) user registration
      */
-    angular.module('frontend.example.login')
+    angular.module('frontend.login')
         .controller('LoginController',
             [
                 '$scope', '$state',

@@ -3,10 +3,10 @@
  *
  *  Controllers
  *
- * All of these are wrapped to 'frontend.example.login' angular module.
+ * All of these are wrapped to 'frontend.login' angular module.
  */
 (function() {
     'use strict';
 
-    angular.module('frontend.example.login', []);
+    angular.module('frontend.login', []);
 }());

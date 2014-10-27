@@ -1,5 +1,5 @@
 /**
- * This file contains all necessary Angular directive definitions for 'frontend.example.navigation' module.
+ * This file contains all necessary Angular directive definitions for 'frontend.navigation' module.
  *
  * Note that this file should only contain directives and nothing else.
  */
@@ -18,7 +18,7 @@
      *
      * This will render navigation items to page.
      */
-    angular.module('frontend.example.navigation')
+    angular.module('frontend.navigation')
         .directive('pageNavigation', function pageNavigation() {
             return {
                 restrict: 'E',
@@ -42,20 +42,8 @@
 
                         $scope.navigationItems = [
                             {
-                                url: 'example.books',
-                                title: 'Books'
-                            },
-                            {
-                                url: 'example.authors',
-                                title: 'Authors'
-                            },
-                            {
-                                url: 'example.messages',
-                                title: 'Messages'
-                            },
-                            {
-                                url: 'example.chat',
-                                title: 'Chat'
+                                url: 'standard',
+                                title: 'Standard Media Units'
                             }
                         ];
                     }
@@ -66,7 +54,7 @@
     /**
      * Directive to show used files on specified example page.
      */
-    angular.module('frontend.example.navigation')
+    angular.module('frontend.navigation')
         .directive('pageInfoFiles', function pageInfoFiles() {
             return {
                 restrict: 'E',
