@@ -1,0 +1,31 @@
+<page-navigation
+    data-title='Information about "Standard Media" GUI'
+    data-directory='standardPlacement'
+    data-template='standardPlacement'
+    data-active-tab='standardPlacements'
+></page-navigation>
+
+<div data-ng-show="!standardPlacement">
+    <h3>Requested standard not found</h3>
+</div>
+
+<div data-ng-show="standardPlacement">
+    <div class="row">
+        <div class="col-md-8">
+            <h3>{{ standardPlacement.name }}</h3>
+            <h4>{{ standardPlacement.width }}x{{ standardPlacement.height }}</h4>
+        </div>
+
+        <div class="col-md-4">
+            <h4 class="text-muted">Information</h4>
+            <table class="table">
+                <tr>
+                    <th>Publisher</th>
+                    <td>
+                        <a data-ui-sref="publisher({id: standardPlacement.publisher.id})">{{standardPlacement.publisher.name}}</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+<page-navigation
+    data-title='Information about "Standard Media Units" GUI'
+    data-directory='standard'
+    data-template='list'
+></page-navigation>
+
+<h3>
+    Standard Media Units ({{itemCount}})
+
+    <pagination class="pagination-sm pull-right"
+        data-total-items="itemCount"
+        data-ng-model="currentPage"
+        data-items-per-page="itemsPerPage"
+        data-max-size="10"
+        data-boundary-links="true"
+        data-rotate="false"
+    ></pagination>
+</h3>
+
+<table class="table">
+    <thead class="noSelect">
+        <tr>
+            <th class="text-nowrap {{item.class}}"
+                data-ng-repeat="item in nameItems"
+            >
+                <a
+                    data-ng-show="item.column"
+                    data-ng-click="changeSort(item)"
+                    data-ng-bind-html="item.name"
+                ></a>
+                <span
+                    data-ng-show="!item.column"
+                    data-ng-bind-html="item.name"
+                ></span>
+
+                <i class="fa"
+                    data-ng-show="sort.column == item.column"
+                    data-ng-class="{'fa-angle-down': !sort.direction, 'fa-angle-up': sort.direction}"
+                ></i>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="standard in items">
+            <td class="col-md-9">
+                <a data-ui-sref="standard({id: standardstandardPlacement.id})">{{standardstandardPlacement.name}}</a>
+            </td>
+            <td class="col-md-2">
+                <a data-ui-sref="publisher({id: standardstandardPlacement.publisher.id})">{{standardstandardPlacement.publisher.name}}</a>
+            </td>
+            <td class="col-md-1 text-right">{{ standardstandardPlacement.width }}x{{ standardstandardPlacement.height }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<pagination class="pagination-sm pull-right"
+    data-total-items="itemCount"
+    data-ng-model="currentPage"
+    data-items-per-page="itemsPerPage"
+    data-max-size="10"
+    data-boundary-links="true"
+    data-rotate="false"
+></pagination>
+
+<!-- <div class="container">
+
+    <div class="jumbotron">
+        <h1>Standard Media Placements</h1>
+        <h3>A standard media ad is one that does not contain dynamic content or video.</h3>
+    </div>
+    <hr/>
+    <div ng-controller="StandardPlacementController">
+        <ul>
+            <li ng-repeat="standard in items">
+                <ul>
+                    <li>{{ standardPlacement.name }}</li>
+                    <li>{{ standardPlacement.width }}x{{ standardPlacement.height }}</li>
+                    <li>{{ standardPlacement.file_type }}</li>
+                    <li>{{ standardPlacement.max_animation_framerate }}</li>
+                    <li>{{ standardPlacement.max_animation_length }}</li>
+                    <li>{{ standardPlacement.audio_initiation }}</li>
+                    <li>{{ standardPlacement.max_audio_length }}</li>
+                    <li>{{ standardPlacement.hotspot_specification }}</li>
+                    <li>{{ standardPlacement.z_index_range }}</li>
+                    <li>{{ standardPlacement.location_on_page }}</li>
+                    <li>{{ standardPlacement.publishers }}</li>
+                    <li>{{ standardPlacement.labeling_requirements }}</li>
+                    <li>{{ standardPlacement.submission_lead_time }}</li>
+                    <li>{{ standardPlacement.implmentation_notes }}</li>
+                    <li>{{ standardPlacement.best_practice_document_url }}</li>
+                    <li>{{ standardPlacement.more_information_url }}</li>
+                    <a class="btn btn-medium btn-primary" href="/standardplacement/edit/<%= standardPlacement.id %>">Edit</a>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <a class="btn btn-medium btn-primary" href="/standardplacement/new">Create New Placement</a>
+</div> -->

@@ -1,0 +1,27 @@
+<div class="container">
+
+	<div class="jumbotron">
+		<h1>{{ standardPlacement.name }}</h1>
+		<h3>{{ standardPlacement.width }}x{{ standardPlacement.height }}</h3>
+	</div>
+	<hr/>
+	<div ng-controller="StandardPlacementController">
+		<ul>
+			<li>{{ standardPlacement.file_type }}</li>
+			<li>{{ standardPlacement.max_animation_framerate }}</li>
+			<li>{{ standardPlacement.max_animation_length }}</li>
+			<li>{{ standardPlacement.audio_initiation }}</li>
+			<li>{{ standardPlacement.max_audio_length }}</li>
+			<li>{{ standardPlacement.hotspot_specification }}</li>
+			<li>{{ standardPlacement.z_index_range }}</li>
+			<li>{{ standardPlacement.location_on_page }}</li>
+			<li>{{ standardPlacement.publishers }}</li>
+			<li>{{ standardPlacement.labeling_requirements }}</li>
+			<li>{{ standardPlacement.submission_lead_time }}</li>
+			<li>{{ standardPlacement.implmentation_notes }}</li>
+			<li>{{ standardPlacement.best_practice_document_url }}</li>
+			<li>{{ standardPlacement.more_information_url }}</li>
+		</ul>
+	</div>
+	<a class="btn btn-medium btn-primary" href="/standard/edit/{{ standardPlacement.id }}">Edit</a>
+</div>
