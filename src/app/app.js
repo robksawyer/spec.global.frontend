@@ -40,7 +40,8 @@
     angular.module('frontend.spec', [
         'frontend.login',
         'frontend.navigation',
-        'frontend.standardPlacement'
+        'frontend.standardPlacement',
+        'frontend.publisher'
     ]);
 
     /*angular.module('frontend.example', [

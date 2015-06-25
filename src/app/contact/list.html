@@ -1,11 +1,11 @@
 <page-navigation
-    data-title='Information about "Authors" GUI'
-    data-directory='author'
+    data-title='Information about "Contacts" GUI'
+    data-directory='contact'
     data-template='list'
 ></page-navigation>
 
 <h3>
-    Authors ({{itemCount}})
+    Contacts ({{itemCount}})
 
     <pagination class="pagination-sm pull-right"
         data-total-items="itemCount"
@@ -40,14 +40,14 @@
         </th>
     </tr>
     </thead>
-    <tbody>
-        <tr data-ng-repeat="author in items">
+<!--     <tbody>
+        <tr data-ng-repeat="contact in items">
             <td class="col-md-11">
-                <a data-ui-sref="example.author({id: author.id})">{{author.name}}</a>
+                <a data-ui-sref="contact({id: contact.id})">{{contact.name}}</a>
             </td>
-            <td class="col-md-1 text-right">{{author.books.length}}</td>
+            <td class="col-md-1 text-right">{{contact.books.length}}</td>
         </tr>
-    </tbody>
+    </tbody> -->
 </table>
 
 <pagination class="pagination-sm pull-right"

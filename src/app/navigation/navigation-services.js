@@ -84,7 +84,7 @@
                      *
                      * @type {string}
                      */
-                    var repository = 'https://github.com/tarlepp/angular-sailsjs-boilerplate/blob/master/';
+                    var repository = 'https://github.com/robksawyer/spec.global.frontend/tree/master';
 
                     /**
                      * Type configuration for files.

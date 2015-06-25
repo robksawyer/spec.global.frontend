@@ -5,10 +5,10 @@
  *  Controllers
  *  Models
  *
- * All of these are wrapped to 'frontend.example.author' angular module.
+ * All of these are wrapped to 'frontend.contact' angular module.
  */
 (function() {
     'use strict';
 
-    angular.module('frontend.example.author', []);
+    angular.module('frontend.contact', []);
 }());

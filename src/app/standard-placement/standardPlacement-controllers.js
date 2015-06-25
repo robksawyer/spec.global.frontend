@@ -23,7 +23,7 @@
         );
 
     /**
-     * Controller which contains all necessary logic for book list GUI on boilerplate application.
+     * Controller which contains all necessary logic for standard placement list GUI on boilerplate application.
      */
     angular.module('frontend.standardPlacement')
         .controller('StandardPlacementListController',

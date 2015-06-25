@@ -1,5 +1,5 @@
 /**
- * This file contains all necessary Angular controller definitions for 'frontend.example.author' module.
+ * This file contains all necessary Angular controller definitions for 'frontend.contact' module.
  *
  * Note that this file should only contain controllers and nothing else.
  */
@@ -7,18 +7,18 @@
     'use strict';
 
     /**
-     * Controller to show single author on GUI.
+     * Controller to show single contact on GUI.
      */
-    angular.module('frontend.example.author')
-        .controller('AuthorController',
+    angular.module('frontend.contact')
+        .controller('ContactController',
             [
                 '$scope',
-                '_author',
+                '_contact',
                 function($scope,
-                         _author
+                         _contact
                 ) {
-                    $scope.activeTab = 'example.authors';
-                    $scope.author = _author;
+                    $scope.activeTab = 'contacts';
+                    $scope.contact = _contact;
                 }
             ]
         );
@@ -26,18 +26,18 @@
     /**
      * Controller which contains all necessary logic for book list GUI on boilerplate application.
      */
-    angular.module('frontend.example.author')
-        .controller('AuthorListController',
+    angular.module('frontend.contact')
+        .controller('ContactListController',
             [
                 '$scope', '$q',
                 'ListConfig',
-                'AuthorModel',
+                'ContactModel',
                 function($scope, $q,
                          ListConfig,
-                         AuthorModel
+                         ContactModel
                 ) {
                     // Initialize data
-                    $scope.endPoint = 'author';
+                    $scope.endPoint = 'contact';
 
                     // Add default list configuration variable to current scope
                     $scope = angular.extend($scope, angular.copy(ListConfig.getConfig()));
@@ -87,7 +87,7 @@
                         };
 
                         // Fetch data count
-                        var count = AuthorModel
+                        var count = ContactModel
                             .count()
                             .then(
                                 function successCallback(response) {
@@ -96,7 +96,7 @@
                             );
 
                         // Fetch actual data
-                        var load = AuthorModel
+                        var load = ContactModel
                             .load(parameters)
                             .then(
                                 function successCallback(response) {

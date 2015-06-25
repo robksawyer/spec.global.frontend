@@ -26,6 +26,14 @@ header .navbar-nav {
   float: none;
 }
 
+header{
+  .navbar-header{
+     img{
+        max-width: 200px;
+     }
+  }
+}
+
 footer {
   .navbar {
     min-height: 25px;
